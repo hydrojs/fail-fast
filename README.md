@@ -28,8 +28,22 @@ $ hydro --fail-fast
 
 ## Installation
 
+#### npm:
+
 ```bash
-npm install hydro-fial-fast
+npm install hydro-fail-fast
+```
+
+#### component:
+
+```bash
+component install hydrojs/hydro-fail-fast
+```
+
+#### standalone:
+
+```bash
+<script src="hydro-fail-fast.js"></script>
 ```
 
 ## Tests
