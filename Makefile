@@ -8,12 +8,12 @@ standalone: node_modules components
 
 # Make a new build
 
-build: components lib/*
+build: components
 	@./node_modules/.bin/component-build --dev
 
 # Release
 
-release: clean node_modules build stanadalone test
+release: clean node_modules build standalone test
 	@git changelog
 
 # Clean
@@ -36,11 +36,10 @@ clean-cov:
 # CI
 
 test:
-	@bin/hydro
+	@npm test
 
 coveralls:
 	@./node_modules/.bin/istanbul cover bin/_hydro --report lcovonly -- \
-		--formatter hydro-silent \
 		&& cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 # Support
