@@ -39,7 +39,7 @@ test:
 	@npm test
 
 coveralls:
-	@./node_modules/.bin/istanbul cover bin/_hydro --report lcovonly -- \
+	@./node_modules/.bin/istanbul cover ./node_modules/.bin/_hydro --report lcovonly -- \
 		&& cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 # Support
