@@ -18,7 +18,7 @@ release: clean node_modules build stanadalone test
 
 # Clean
 
-clean: clean-node clean-browser clean-components clean-cov
+clean: clean-browser clean-components clean-cov
 
 clean-node:
 	@rm -rf node_modules
@@ -48,7 +48,7 @@ coveralls:
 components: node_modules component.json
 	@./node_modules/.bin/component-install --dev
 
-node_modeuls:
+node_modules: clean-node
 	@npm install
 
 .PHONY: all test coverage standalone
