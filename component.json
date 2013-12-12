@@ -1,0 +1,14 @@
+{
+  "name": "hydro-fail-fast",
+  "repo": "hydrojs/hydro-fail-fast",
+  "description": "Abort hydro tests on first failure",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "development": {
+    "chaijs/simple-assert": "*"
+  }
+}
