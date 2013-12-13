@@ -7,20 +7,18 @@ test('abort the tests after the first failure', function(done) {
   hydro.set({
     attach: global,
     plugins: [plugin],
-    'fail-fast': true,
     proxies: {
       'describe': 'addSuite',
       'it': 'addTest',
     },
+    'fail-fast': true,
     tests: [__dirname + '/fixtures']
   });
 
-  hydro.on('post:all', function(runner) {
-    var failed = runner.suites[0].tests[0];
-    var skipped = runner.suites[0].tests[1];
-
-    assert(failed.failed === true);
-    assert(skipped.skipped === true);
+  hydro.on('post:all', function() {
+    var tests = hydro.tests();
+    assert(tests[0].status === 'failed');
+    assert(tests[1].status === 'skipped');
     done();
   });
 
