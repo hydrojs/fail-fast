@@ -15,7 +15,7 @@ module.exports = function(hydro) {
   });
 
   hydro.on('post:test', function(test) {
-    if (test.failed) fail = true;
+    if (test.status === 'failed') fail = true;
   });
 };
 
