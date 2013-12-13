@@ -1,6 +1,6 @@
 {
   "name": "hydro-fail-fast",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Abort hydro tests on first failure",
    "keywords": [
     "hydroplugin",

@@ -210,15 +210,14 @@ require.register("hydro-fail-fast/index.js", function(exports, require, module){
 
 module.exports = function(hydro) {
   if (!hydro.get('fail-fast')) return;
-
-  var fail = false;
+  var skip = false;
 
   hydro.on('pre:test', function(test) {
-    if (fail) test.skip();
+    if (skip) test.skip();
   });
 
   hydro.on('post:test', function(test) {
-    if (test.status === 'failed') fail = true;
+    if (test.status === 'failed') skip = true;
   });
 };
 
